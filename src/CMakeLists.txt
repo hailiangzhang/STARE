@@ -36,6 +36,7 @@ add_library( STARE STATIC ${STARE_SrcFiles} )
 
 SET (Boost_INCLUDE_DIR "/usr/include/")
 SET (Boost_LIBRARY_DIR "/usr/lib/x86_64-linux-gnu/")
+SET (Python_LIBRARY_DIR "/usr/lib/python3/dist-packages")
 
 find_package(Boost)
 if(Boost_FOUND)
