@@ -36,6 +36,7 @@ add_library( STARE STATIC ${STARE_SrcFiles} )
 
 find_package(Boost)
 if(Boost_FOUND)
+  message("Boost found.")
   include_directories( "${Boost_INCLUDE_DIRS}" "/usr/include/python3.7m"  )
   set(Boost_USE_STATIC_LIBS OFF)
   set(Boost_USE_MULTITHREADED ON)
