@@ -2,9 +2,6 @@
 # that was used to build STARE.
 FROM centos:centos7.6.1810
 
-# Pick a branch (or commit) in the STARE repository
-ARG STARE_BRANCH=master
-
 # install the EPEL repo
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
