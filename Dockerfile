@@ -30,6 +30,7 @@ RUN yum -y install git && \
 
 # make a directory to work in
 RUN mkdir /root/stare/
+RUN mkdir /root/stare/STARE/
  
 # move there
 WORKDIR /root/stare/
@@ -38,7 +39,12 @@ WORKDIR /root/stare/
 RUN git clone https://github.com/PeterSommerlad/CUTE.git
  
 # clone STARE
- RUN git clone --single-branch --branch ${STARE_BRANCH} https://github.com/hailiangzhang/STARE.git
+# RUN git clone --single-branch --branch ${STARE_BRANCH} https://github.com/hailiangzhang/STARE.git
+COPY ./CMakeLists.txt /root/stare/STARE/
+COPY ./src/ /root/stare/STARE/src/
+COPY ./include/ /root/stare/STARE/include/
+COPY ./app/ /root/stare/STARE/app/
+COPY ./tests/ /root/stare/STARE/tests/
 
 # tell the build where CUTE is
 ENV CUTE_INCLUDE_DIR=/root/stare/CUTE
