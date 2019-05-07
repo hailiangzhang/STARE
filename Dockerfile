@@ -38,8 +38,7 @@ WORKDIR /root/stare/
 # get CUTE unit test framework
 RUN git clone https://github.com/PeterSommerlad/CUTE.git
  
-# clone STARE
-# RUN git clone --single-branch --branch ${STARE_BRANCH} https://github.com/hailiangzhang/STARE.git
+# Copy minimal sets of needed folders/files to the docker image
 COPY ./CMakeLists.txt /root/stare/STARE/
 COPY ./src/ /root/stare/STARE/src/
 COPY ./include/ /root/stare/STARE/include/
